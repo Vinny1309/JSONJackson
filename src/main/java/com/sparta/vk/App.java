@@ -8,6 +8,16 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        RatesDeserialiser ratesDeserialiser = new RatesDeserialiser("resources/rates.json");
+
+        System.out.println(ratesDeserialiser.ratesMappedDTO.isSuccess());
+
+        System.out.println(ratesDeserialiser.ratesMappedDTO.getRates("GBP"));
+
+        System.out.println(ratesDeserialiser.ratesMappedDTO.getBase());
+
+        System.out.println(ratesDeserialiser.ratesMappedDTO.getDate());
+
+        System.out.println(ratesDeserialiser.ratesMappedDTO.getTimestamp());
     }
 }
